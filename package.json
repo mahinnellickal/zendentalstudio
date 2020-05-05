@@ -1,0 +1,16 @@
+{
+  "name": "zendental",
+  "version": "1.0.0",
+  "description": "ZenDentalStudio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mahin",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "^4.4.1",
+    "owl.carousel": "^2.3.4"
+  }
+}

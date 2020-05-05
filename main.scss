@@ -1,0 +1,385 @@
+
+// Custom vars
+$body-bg: #fff;
+$border-radius: 20px;
+$text-black: #000;
+$text-gray: #666;
+$active-blue : #336699;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import "/node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+// custom
+.zd {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+    color: #333333;
+
+    p {
+        font-weight: 300;
+    }
+
+    // Utility classes
+    .fluid {
+        width: 100%;
+    }
+
+    @mixin shadow-md {
+        box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.25);
+    }
+    // ./Utility classes
+
+
+    .curvSec {
+        border-radius: 0 0 85% 85% / 100px;
+        margin-top: -80px;
+        position: relative;
+
+        &.headMain {
+            margin-top: 0;
+            padding: 0;
+
+            >.container {
+                margin-top: 0;
+            }
+        }
+
+        >.container {
+            margin-top: 120px;
+
+            h2 {
+                font-size: 36px;
+                font-weight: 500;
+            }
+
+            h4 {
+                font-size: 26px;
+                font-weight: 400;
+            }
+
+            h5 {
+                font-size: 24px;
+                font-weight: 300;
+            }
+
+            h6 {
+                font-weight: 400;
+                font-size: 22px;
+            }
+        }
+    }
+
+    // header section
+    .headMain {
+        background: url('assets/img/banner1.png') no-repeat 75% bottom, #ffffff 0%;
+        background-size: auto 90%;
+        z-index: 10;
+
+        .logoWrap {
+            padding: 30px 15px 50px 15px;
+            background-color: #fff;
+            overflow: hidden;
+            box-shadow: 0px 6px 8px 1px rgba(0, 0, 0, 0.25);
+            border-radius: 0 0 80% 80% / 40%;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .nav {
+            font-size: 20px;
+            font-weight: 400;
+            padding-top: 25px;
+
+            .nav-item {
+                a {
+                    color: $text-black;
+
+                    &:active {
+                        color: $active-blue;
+                    }
+                }
+
+                &.active a {
+                    position: relative;
+                    color: $active-blue;
+
+                    &:before {
+                        content: " ";
+                        height: 2px;
+                        background: blue;
+                        display: block;
+                        position: absolute;
+                        left: 1rem;
+                        right: 1rem;
+                        bottom: 0px;
+                    }
+                }
+            }
+
+        }
+
+        .bannerMain {
+            min-height: 450px;
+            transform: translateY(-30px);
+
+            h1 {
+                font-size: 60px;
+                font-weight: 600;
+                line-height: 100%;
+            }
+
+            h4 {
+                font-size: 34px;
+                font-weight: 400;
+                color: $text-gray;
+            }
+
+        }
+
+        .book {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -20px;
+            font-weight: 500;
+            color: #fff;
+            background: rgb(31, 97, 217);
+            background: linear-gradient(90deg, rgba(31, 97, 217, 1) 0%, rgba(53, 178, 214, 1) 100%);
+        }
+    }
+
+    // About section
+    .about {
+        color: #fff;
+        position: relative;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 0%), url(assets/img/atzendentalstudio.jpg);
+        background-size: cover;
+        background-position: center center;
+        z-index: 9;
+        padding: 100px 18%;
+
+    }
+
+    // Values section
+    .values {
+        z-index: 8;
+        background: #fff;
+
+        .card {
+            @include shadow-md();
+
+            .collapseHead {
+                font-size: 22px;
+                color: $text-black;
+
+                i {
+                    position: absolute;
+                    right: 5px;
+                    top: 18px;
+                    height: 30px;
+                    width: 30px;
+
+                    &:before {
+                        content: "\f077";
+
+                    }
+                }
+                
+                &.collapsed {
+                    i {
+                        &:before {
+                            content: "\f078";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Services section
+    .service {
+        @extend .about;
+        z-index: 7;
+        padding: 100px 0 80px 0;
+
+        .container {
+            margin-top: 20px;
+
+            &.card-group {
+                text-shadow: none;
+                color: $text-gray;
+
+                .col-3 {
+                    margin-left: -6.25%;
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+
+                    .card {
+                        transition: all ease-in-out 250ms;
+                        overflow: hidden;
+                        height: 100%;
+                        @include shadow-md();
+
+                        img {
+                            border-radius: 0 0 80% 80% / 20%;
+                            width: 100%;
+                            height: auto;
+                        }
+
+                        p {
+                            font-weight: 300;
+                        }
+
+                        .card-title {
+                            color: $text-black;
+                            font-weight: 500;
+                        }
+
+                        &:hover {
+                            box-shadow: 0px 2px 14px 4px rgba(0, 0, 0, 0.18);
+                            transform: scale(1.02);
+                            z-index: 10;
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    // Testimonials section
+    .testimony {
+        @extend .about;
+        background: linear-gradient(90deg, rgba(51, 102, 204, 0.40) 0%, rgba(51, 102, 204, 0.40) 0%), url('assets/img/testimonialzendentalstudio.jpg') no-repeat center center;
+        background-size: cover;
+        padding: 5px 0 10px;
+        z-index: 5;
+
+        .owl-carousel {
+            .owl-stage {
+                display: flex;
+
+                .owl-item {
+
+                    .itemWrap {
+                        padding: 15px;
+                        height: 100%;
+
+                        .card {
+                            @include shadow-md();
+                            height: 100%;
+                            text-shadow: none;
+                            color: #666;
+
+                            img {
+                                border: solid 2px #fff;
+                                @include shadow-md();
+                                border-radius: 50%;
+                            }
+
+                            .signature {
+                                font-family: 'Sacramento', cursive;
+                                margin: 10px 0 15px 0;
+                                display: block;
+                                text-align: right;
+                                font-size: 24px;
+                                color: $text-black;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .owl-nav {
+                background: #fff;
+                width: 100px;
+                border-radius: 20px;
+                color: #666;
+                text-align: center;
+                font-size: 37px;
+                line-height: 100%;
+                position: absolute;
+                bottom: 45px;
+                justify-content: center;
+                left: 35%;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+
+                button {
+                    width: 40%;
+                    margin: 0 5%;
+                    outline: none;
+                    color: $text-black;
+                }
+            }
+        }
+    }
+
+    // Contact section
+    .contact {
+        z-index: 4;
+        // background: #fff;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 0%), url('assets/img/locationzendentalstudio.jpg') no-repeat center center;
+        background-size: cover;
+        overflow: hidden;
+
+        .container {
+            margin-top: 0;
+            min-height: 600px;
+            position: relative;
+
+            .card {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin-bottom: -20px;
+
+                h5 {
+                    font-size: 30px;
+                    font-weight: 400;
+
+                    span {
+                        font-size: 20px;
+                        display: block;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            i {
+                width: 20px;
+            }
+        }
+    }
+
+    // Footer section
+    .mainFoot {
+        z-index: 3;
+        background: #35373d;
+        padding: 50px 0 40px;
+        border-radius: 0;
+
+        .container {
+            margin-top: 80px;
+            color: #999999;
+
+            .social {
+                a {
+                    display: inline-block;
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+}
